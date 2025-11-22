@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #090C15;
+  --font-family-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+

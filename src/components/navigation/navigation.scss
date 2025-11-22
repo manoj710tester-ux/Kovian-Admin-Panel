@@ -1,0 +1,228 @@
+.navigation {
+  width: 100%;
+  max-width: 280px;
+  background-color: transparent;
+  padding: 1.5rem 1rem;
+  height: fit-content;
+
+  // Dashboard - Special Styling
+  &__dashboard {
+    margin-bottom: 1.5rem;
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.875rem 1rem;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      font-weight: 600;
+      font-size: 1rem;
+      width: 100%;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.12);
+      }
+
+      &--active {
+        background-color: rgba(255, 255, 255, 0.12);
+        animation: fadeInScale 0.6s ease-in-out;
+        margin: 1rem 0;
+
+        .navigation__dashboard-icon {
+          animation: iconGrow 0.6s ease-in-out;
+          transform: scale(1.2);
+        }
+
+        .navigation__dashboard-label {
+          animation: textGrow 0.6s ease-in-out;
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    &-label {
+      flex: 1;
+      font-weight: 600;
+      transition: font-size 0.3s ease, opacity 0.3s ease;
+    }
+  }
+
+  &__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    font-size: 0.95rem;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    &--active {
+      background-color: rgba(255, 255, 255, 0.08);
+      font-weight: 500;
+      animation: fadeInScale 0.6s ease-in-out;
+
+      .navigation__icon {
+        animation: iconGrow 0.6s ease-in-out;
+        transform: scale(1.2);
+      }
+
+      .navigation__label {
+        animation: textGrow 0.6s ease-in-out;
+        font-size: 1.05rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  &__label {
+    flex: 1;
+    color: white;
+    transition: font-size 0.3s ease, font-weight 0.3s ease, opacity 0.3s ease;
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 1rem 0.75rem;
+
+    &__dashboard {
+      margin-bottom: 1rem;
+
+      &-link {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    &__link {
+      padding: 0.625rem 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    &__icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem 0.5rem;
+
+    &__dashboard {
+      margin-bottom: 0.75rem;
+
+      &-link {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.9rem;
+      }
+
+      &-label {
+        font-size: 0.9rem;
+      }
+    }
+
+    &__menu {
+      gap: 0.2rem;
+    }
+
+    &__link {
+      padding: 0.5rem 0.625rem;
+      font-size: 0.85rem;
+    }
+
+    &__icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+// Animations
+@keyframes fadeInScale {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes iconGrow {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes textGrow {
+  0% {
+    font-size: 0.95rem;
+    opacity: 0.8;
+  }
+  50% {
+    font-size: 1.02rem;
+    opacity: 0.9;
+  }
+  100% {
+    font-size: 1.05rem;
+    opacity: 1;
+  }
+}

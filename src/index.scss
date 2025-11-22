@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Custom SCSS variables
+$primary-color: #090C15;
+$secondary-color: #8b5cf6;
+
+// Custom styles
+body {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  background-color: $primary-color;
+}
+

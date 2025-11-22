@@ -1,0 +1,237 @@
+.header {
+  background-color: var(--color-primary, #090c15);
+  // border-top: 1px solid rgba(59, 130, 246, 0.3);
+  // border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &__container {
+    // max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  &__search-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+    @media (max-width: 768px) {
+      justify-content: flex-end;
+    }
+  }
+
+  // Logo
+  &__logo {
+    flex-shrink: 0;
+    width: 20rem;
+
+    &__icon {
+      width: 5rem;
+      height: 5rem;
+      object-fit: cover;
+    }
+  }
+
+  // Search Bar
+  &__search {
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    &-icon {
+      position: absolute;
+      left: 16px;
+      color: rgba(255, 255, 255, 0.6);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &-input {
+      width: 100%;
+      padding: 12px 16px 12px 48px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      color: white;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s ease;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      &:focus {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(59, 130, 246, 0.5);
+      }
+    }
+  }
+
+  // Actions (Notifications + Profile)
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  // Notification Bell
+  &__notification {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &-dot {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 8px;
+      height: 8px;
+      background: #3b82f6;
+      border-radius: 50%;
+      border: 2px solid var(--color-primary, #090c15);
+    }
+
+    &-sparkles {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+    }
+  }
+
+  &__sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    animation: sparkle 2s infinite;
+
+    &:nth-child(1) {
+      top: -2px;
+      right: 2px;
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      top: 2px;
+      right: -2px;
+      animation-delay: 1s;
+    }
+  }
+
+  &__bell-icon {
+    color: white;
+    stroke-width: 2;
+  }
+
+  // User Profile
+  &__profile {
+    &-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-color: rgba(59, 130, 246, 0.5);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    &__container {
+      padding: 0 16px;
+      gap: 1rem;
+    }
+
+    &__search {
+      max-width: none;
+      flex: 1;
+
+      &-input {
+        padding: 10px 14px 10px 44px;
+        font-size: 0.9rem;
+      }
+    }
+
+    &__logo-icon {
+      width: 36px;
+      height: 36px;
+      font-size: 1.25rem;
+    }
+
+    &__profile-img {
+      width: 36px;
+      height: 36px;
+    }
+
+    &__notification {
+      padding: 6px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__search {
+      &-input {
+        &::placeholder {
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    &__logo-icon {
+      width: 32px;
+      height: 32px;
+      font-size: 1.1rem;
+    }
+
+    &__profile-img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+// Sparkle Animation
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
