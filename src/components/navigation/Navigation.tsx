@@ -28,7 +28,6 @@ import meetingActive from "../../assets/nav-icon/meeting-active.png";
 import settingNoActive from "../../assets/nav-icon/setting-no-active.png";
 import settingActive from "../../assets/nav-icon/setting-active.png";
 
-
 const Navigation = () => {
   const location = useLocation();
   // Dashboard with grid icon (2x4 grid - 8 squares: 2 columns, 4 rows)
@@ -56,13 +55,13 @@ const Navigation = () => {
     {
       path: "/deals",
       icon: dealNoActive,
-      activeIcon: dealActive,     
+      activeIcon: dealActive,
       label: "Deals",
     },
     {
       path: "/task",
       icon: taskNoActive,
-      activeIcon: taskActive,  
+      activeIcon: taskActive,
       label: "Task",
     },
     {
@@ -90,9 +89,6 @@ const Navigation = () => {
       label: "Settings",
     },
   ];
-
-  const isDashboardActive =
-    location.pathname === "/" || location.pathname === "/dashboard";
 
   return (
     <nav className="navigation">
