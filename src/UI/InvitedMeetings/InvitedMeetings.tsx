@@ -1,5 +1,4 @@
 import "./InvitedMeetings.scss";
-import Button from "../Button/Button";
 
 interface InvitedMeetingsProps {
   title?: string;

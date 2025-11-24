@@ -14,7 +14,7 @@ interface LeadsInformationProps {
 }
 
 const LeadsInformation = ({
-  title = "Lead Information",
+  title: _title = "Lead Information",
   basicFields = [
     { label: "Lead Owner", value: "Nandha Kumar" },
     { label: "Email", value: "rohan.metha@innovix.com" },
