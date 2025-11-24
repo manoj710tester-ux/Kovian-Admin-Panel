@@ -28,7 +28,12 @@ import meetingActive from "../../assets/nav-icon/meeting-active.png";
 import settingNoActive from "../../assets/nav-icon/setting-no-active.png";
 import settingActive from "../../assets/nav-icon/setting-active.png";
 
-const Navigation = () => {
+interface NavigationProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+const Navigation = ({ isOpen = false, onClose }: NavigationProps) => {
   const location = useLocation();
   // Dashboard with grid icon (2x4 grid - 8 squares: 2 columns, 4 rows)
 
@@ -90,23 +95,33 @@ const Navigation = () => {
     },
   ];
 
-  return (
-    <nav className="navigation">
-      {/* Dashboard - Special Active Item */}
-      {/* <div className="navigation__dashboard">
-        <Link
-          to="/dashboard"
-          className={`navigation__dashboard-link ${
-            isDashboardActive ? "navigation__dashboard-link--active" : ""
-          }`}
-        >
-          <span className="navigation__dashboard-icon">{dashboardIcon}</span>
-          <span className="navigation__dashboard-label">DashBoard</span>
-        </Link>
-      </div> */}
+  const handleLinkClick = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
 
-      {/* Other Menu Items */}
-      <ul className="navigation__menu">
+  return (
+    <>
+      {isOpen && (
+        <div className="navigation__overlay" onClick={onClose}></div>
+      )}
+      <nav className={`navigation ${isOpen ? "navigation--open" : ""}`}>
+        {/* Dashboard - Special Active Item */}
+        {/* <div className="navigation__dashboard">
+          <Link
+            to="/dashboard"
+            className={`navigation__dashboard-link ${
+              isDashboardActive ? "navigation__dashboard-link--active" : ""
+            }`}
+          >
+            <span className="navigation__dashboard-icon">{dashboardIcon}</span>
+            <span className="navigation__dashboard-label">DashBoard</span>
+          </Link>
+        </div> */}
+
+        {/* Other Menu Items */}
+        <ul className="navigation__menu">
         {menuItems.map((item, index) => {
           const isActive = location.pathname === item.path;
           const iconSrc =
@@ -118,6 +133,7 @@ const Navigation = () => {
                 className={`navigation__link ${
                   isActive ? "navigation__link--active" : ""
                 }`}
+                onClick={handleLinkClick}
               >
                 <img
                   src={iconSrc}
@@ -130,7 +146,8 @@ const Navigation = () => {
           );
         })}
       </ul>
-    </nav>
+      </nav>
+    </>
   );
 };
 

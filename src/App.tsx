@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.scss";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/header/Header";
@@ -13,13 +14,23 @@ import Meeting from "./pages/Meeting";
 import Settings from "./pages/Settings";
 
 const App = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <BrowserRouter>
       <div className="bg-primary conta">
-        <Header />
+        <Header onMenuToggle={toggleMobileMenu} />
         <div className="navigation__container">
-          <Navigation />
-          <div className="text-white flex-4 page-content">
+          <Navigation isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
+          <div className="text-white flex-4 p-4 scrollbar-design">
             <Routes>
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />

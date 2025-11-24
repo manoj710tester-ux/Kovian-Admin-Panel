@@ -1,0 +1,232 @@
+.open-activities {
+  background-color: var(--color-card-background, #191d2a);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.open-activities__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  position: relative;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    pointer-events: none;
+  }
+}
+
+.open-activities__title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  text-transform: capitalize;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.open-activities__add-new {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  //   color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.open-activities__arrow {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.open-activities__toggle {
+  background: transparent;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.open-activities__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  width: 16px;
+  height: 16px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.open-activities__content {
+  padding: 1.5rem;
+  animation: slideDown 0.3s ease-out;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.open-activities__input-container {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.open-activities__input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(59, 130, 246, 0.5);
+  }
+}
+
+.open-activities__add-btn {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: #66caec;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: #60a5fa;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.open-activities__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.open-activities__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.open-activities__item-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.open-activities__delete-btn {
+  background: transparent;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  margin-left: 0.5rem;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.open-activities__placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}

@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #090C15;
-  --font-family-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+  --color-primary: #090c15;
+  --font-family-sans: "Poppins", system-ui, -apple-system, sans-serif;
+  --color-card-background: #191d2a;
+  --color-card-text: #ffffff;
+  --color-primary-text: #66caec;
 }
-

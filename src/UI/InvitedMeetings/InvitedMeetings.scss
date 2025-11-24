@@ -1,0 +1,56 @@
+.invited-meetings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(59, 130, 246, 0.3),
+      transparent
+    );
+  }
+}
+
+.invited-meetings__title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.invited-meetings__compose {
+  background: transparent;
+  border: none;
+  color: #66CAEC;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #60a5fa;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+
+

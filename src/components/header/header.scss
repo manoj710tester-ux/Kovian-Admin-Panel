@@ -7,6 +7,14 @@
   top: 0;
   z-index: 100;
 
+  @media (max-width: 768px) {
+    padding: 0.75rem 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem 0;
+  }
+
   &__container {
     // max-width: 1440px;
     width: 100%;
@@ -16,27 +24,89 @@
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
+
+    @media (max-width: 768px) {
+      padding: 0 16px;
+      gap: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 12px;
+      gap: 0.75rem;
+    }
   }
+
   &__search-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
     flex: 1;
+
     @media (max-width: 768px) {
       justify-content: flex-end;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 0.5rem;
     }
   }
 
   // Logo
+  &__menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: opacity 0.3s ease;
+    // margin-right: 1rem;
+
+    @media (max-width: 900px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
   &__logo {
     flex-shrink: 0;
     width: 20rem;
+
+    @media (max-width: 768px) {
+      width: auto;
+    }
 
     &__icon {
       width: 5rem;
       height: 5rem;
       object-fit: cover;
+      transition: width 0.3s ease, height 0.3s ease;
+
+      @media (max-width: 768px) {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+
+      @media (max-width: 480px) {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
     }
   }
 
@@ -88,6 +158,10 @@
     align-items: center;
     gap: 1rem;
     flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      gap: 1rem;
+    }
   }
 
   // Notification Bell
@@ -102,6 +176,14 @@
     justify-content: center;
     transition: transform 0.2s ease;
 
+    @media (max-width: 768px) {
+      padding: 6px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 4px;
+    }
+
     &:hover {
       transform: scale(1.1);
     }
@@ -112,9 +194,17 @@
       right: 6px;
       width: 8px;
       height: 8px;
-      background: #3b82f6;
+      background: #66caec;
       border-radius: 50%;
       border: 2px solid var(--color-primary, #090c15);
+
+      @media (max-width: 480px) {
+        width: 6px;
+        height: 6px;
+        top: 4px;
+        right: 4px;
+        border-width: 1.5px;
+      }
     }
 
     &-sparkles {
@@ -148,6 +238,16 @@
   &__bell-icon {
     color: white;
     stroke-width: 2;
+
+    @media (max-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 480px) {
+      width: 18px;
+      height: 18px;
+    }
   }
 
   // User Profile
@@ -161,64 +261,21 @@
       cursor: pointer;
       transition: all 0.2s ease;
 
+      @media (max-width: 768px) {
+        width: 36px;
+        height: 36px;
+      }
+
+      @media (max-width: 480px) {
+        width: 32px;
+        height: 32px;
+        border-width: 1.5px;
+      }
+
       &:hover {
         border-color: rgba(59, 130, 246, 0.5);
         transform: scale(1.05);
       }
-    }
-  }
-
-  // Responsive Design
-  @media (max-width: 768px) {
-    &__container {
-      padding: 0 16px;
-      gap: 1rem;
-    }
-
-    &__search {
-      max-width: none;
-      flex: 1;
-
-      &-input {
-        padding: 10px 14px 10px 44px;
-        font-size: 0.9rem;
-      }
-    }
-
-    &__logo-icon {
-      width: 36px;
-      height: 36px;
-      font-size: 1.25rem;
-    }
-
-    &__profile-img {
-      width: 36px;
-      height: 36px;
-    }
-
-    &__notification {
-      padding: 6px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    &__search {
-      &-input {
-        &::placeholder {
-          font-size: 0.85rem;
-        }
-      }
-    }
-
-    &__logo-icon {
-      width: 32px;
-      height: 32px;
-      font-size: 1.1rem;
-    }
-
-    &__profile-img {
-      width: 32px;
-      height: 32px;
     }
   }
 }
