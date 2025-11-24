@@ -4,7 +4,7 @@
 
 Kovaion  Admin Panel is a comprehensive Customer Relationship Management (CRM) system designed to help businesses manage their leads, contacts, deals, and customer interactions efficiently. Built with modern web technologies, this application provides a clean, intuitive interface for tracking sales pipelines, managing customer relationships, and analyzing business performance through interactive dashboards and visualizations.
 
-The application is currently deployed and accessible at: **[https://dev.d1nl2ov9mo165l.amplifyapp.com/dashboard](https://dev.d1nl2ov9mo165l.amplifyapp.com/dashboard)**
+The application is currently deployed and accessible at: **[https://main.d1nl2ov9mo165l.amplifyapp.com/dashboard](https://main.d1nl2ov9mo165l.amplifyapp.com/dashboard)**
 The apllication is designed in Figma : https://www.figma.com/design/3GnJbvwoB7cU2E15qhKeFX/Kovaion--task?node-id=0-1&t=AUB8AA4s0lWH5KCP-1
 ## Features
 
@@ -237,7 +237,7 @@ The `amplify.yml` file defines the build process:
 #### Live Environment
 
 The application is currently deployed at:
-**https://dev.d1nl2ov9mo165l.amplifyapp.com/dashboard**
+**https://main.d1nl2ov9mo165l.amplifyapp.com/dashboard**
 
 This is the development environment. Production deployments can be configured for different branches.
 
@@ -349,5 +349,5 @@ For questions, issues, or contributions, please refer to the project repository 
 
 **Last Updated**: December 2024  
 **Version**: 1.0.0  
-**Live Application**: [https://dev.d1nl2ov9mo165l.amplifyapp.com/dashboard](https://dev.d1nl2ov9mo165l.amplifyapp.com/dashboard)
+**Live Application**: [https://main.d1nl2ov9mo165l.amplifyapp.com/dashboard](https://main.d1nl2ov9mo165l.amplifyapp.com/dashboard)
 
